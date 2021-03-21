@@ -1,7 +1,6 @@
 dependencies:
   axios: registry.npmjs.org/axios/0.21.1
   bootstrap: registry.npmjs.org/bootstrap/4.6.0
-  dotenv: registry.npmjs.org/dotenv/8.2.0
   next: registry.npmjs.org/next/10.0.9_db218f0630aba25493f13d03b8809ea1
   nextjs-breadcrumbs: registry.npmjs.org/nextjs-breadcrumbs/0.9.9_next@10.0.9+react@17.0.1
   react: registry.npmjs.org/react/17.0.1
@@ -9,9 +8,11 @@ dependencies:
   react-dom: registry.npmjs.org/react-dom/17.0.1_react@17.0.1
   react-redux: registry.npmjs.org/react-redux/7.2.2_380dc38591053d98779d1f25fc7202b9
   redux: registry.npmjs.org/redux/4.0.5
+  redux-devtools-extension: registry.npmjs.org/redux-devtools-extension/2.13.9_redux@4.0.5
   redux-thunk: registry.npmjs.org/redux-thunk/2.3.0
   reselect: registry.npmjs.org/reselect/4.0.0
   sass: registry.npmjs.org/sass/1.32.8
+  universal-cookie: registry.npmjs.org/universal-cookie/4.0.4
 lockfileVersion: 5.2
 packages:
   registry.npmjs.org/@babel/code-frame/7.12.11:
@@ -230,6 +231,14 @@ packages:
       registry: https://npm-proxy.fury.io/kellerwilliams/
       tarball: https://registry.npmjs.org/@types/classnames/-/classnames-2.2.11.tgz
     version: 2.2.11
+  registry.npmjs.org/@types/cookie/0.3.3:
+    dev: false
+    name: '@types/cookie'
+    resolution:
+      integrity: sha512-LKVP3cgXBT9RYj+t+9FDKwS5tdI+rPBXaNSkma7hvqy35lc7mAokC2zsqWJH0LaqIt3B962nuYI77hsJoT1gow==
+      registry: https://npm-proxy.fury.io/kellerwilliams/
+      tarball: https://registry.npmjs.org/@types/cookie/-/cookie-0.3.3.tgz
+    version: 0.3.3
   registry.npmjs.org/@types/invariant/2.2.34:
     dev: false
     name: '@types/invariant'
@@ -763,6 +772,16 @@ packages:
       registry: https://npm-proxy.fury.io/kellerwilliams/
       tarball: https://registry.npmjs.org/convert-source-map/-/convert-source-map-1.7.0.tgz
     version: 1.7.0
+  registry.npmjs.org/cookie/0.4.1:
+    dev: false
+    engines:
+      node: '>= 0.6'
+    name: cookie
+    resolution:
+      integrity: sha512-ZwrFkGJxUR3EIoXtO+yVE69Eb7KlixbaeAWfBQB9vVsNn/o+Yw69gBWSSDK825hQNdN+wF8zELf3dFNl/kxkUA==
+      registry: https://npm-proxy.fury.io/kellerwilliams/
+      tarball: https://registry.npmjs.org/cookie/-/cookie-0.4.1.tgz
+    version: 0.4.1
   registry.npmjs.org/core-util-is/1.0.2:
     dev: false
     name: core-util-is
@@ -944,16 +963,6 @@ packages:
       registry: https://npm-proxy.fury.io/kellerwilliams/
       tarball: https://registry.npmjs.org/domain-browser/-/domain-browser-1.2.0.tgz
     version: 1.2.0
-  registry.npmjs.org/dotenv/8.2.0:
-    dev: false
-    engines:
-      node: '>=8'
-    name: dotenv
-    resolution:
-      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
-      registry: https://npm-proxy.fury.io/kellerwilliams/
-      tarball: https://registry.npmjs.org/dotenv/-/dotenv-8.2.0.tgz
-    version: 8.2.0
   registry.npmjs.org/electron-to-chromium/1.3.693:
     dev: false
     name: electron-to-chromium
@@ -2278,6 +2287,19 @@ packages:
       registry: https://npm-proxy.fury.io/kellerwilliams/
       tarball: https://registry.npmjs.org/readdirp/-/readdirp-3.5.0.tgz
     version: 3.5.0
+  registry.npmjs.org/redux-devtools-extension/2.13.9_redux@4.0.5:
+    dependencies:
+      redux: registry.npmjs.org/redux/4.0.5
+    dev: false
+    id: registry.npmjs.org/redux-devtools-extension/2.13.9
+    name: redux-devtools-extension
+    peerDependencies:
+      redux: ^3.1.0 || ^4.0.0
+    resolution:
+      integrity: sha512-cNJ8Q/EtjhQaZ71c8I9+BPySIBVEKssbPpskBfsXqb8HJ002A3KRVHfeRzwRo6mGPqsm7XuHTqNSNeS1Khig0A==
+      registry: https://npm-proxy.fury.io/kellerwilliams/
+      tarball: https://registry.npmjs.org/redux-devtools-extension/-/redux-devtools-extension-2.13.9.tgz
+    version: 2.13.9
   registry.npmjs.org/redux-thunk/2.3.0:
     dev: false
     name: redux-thunk
@@ -2757,6 +2779,17 @@ packages:
       registry: https://npm-proxy.fury.io/kellerwilliams/
       tarball: https://registry.npmjs.org/uncontrollable/-/uncontrollable-7.2.1.tgz
     version: 7.2.1
+  registry.npmjs.org/universal-cookie/4.0.4:
+    dependencies:
+      '@types/cookie': registry.npmjs.org/@types/cookie/0.3.3
+      cookie: registry.npmjs.org/cookie/0.4.1
+    dev: false
+    name: universal-cookie
+    resolution:
+      integrity: sha512-lbRVHoOMtItjWbM7TwDLdl8wug7izB0tq3/YVKhT/ahB4VDvWMyvnADfnJI8y6fSvsjh51Ix7lTGC6Tn4rMPhw==
+      registry: https://npm-proxy.fury.io/kellerwilliams/
+      tarball: https://registry.npmjs.org/universal-cookie/-/universal-cookie-4.0.4.tgz
+    version: 4.0.4
   registry.npmjs.org/unpipe/1.0.0:
     dev: false
     engines:
@@ -2894,7 +2927,6 @@ packages:
 specifiers:
   axios: ^0.21.1
   bootstrap: ^4.6.0
-  dotenv: ^8.2.0
   next: 10.0.9
   nextjs-breadcrumbs: ^0.9.9
   react: 17.0.1
@@ -2902,6 +2934,8 @@ specifiers:
   react-dom: 17.0.1
   react-redux: ^7.2.2
   redux: ^4.0.5
+  redux-devtools-extension: ^2.13.9
   redux-thunk: ^2.3.0
   reselect: ^4.0.0
   sass: ^1.32.8
+  universal-cookie: ^4.0.4

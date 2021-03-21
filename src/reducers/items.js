@@ -6,8 +6,8 @@ import {
 
 const initialState = {
     pending: false,
-    items: [],
-    error: null
+    data: [],
+    error: false
 }
 
 export default function itemsReducer(state = initialState, action) {

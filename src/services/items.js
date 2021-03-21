@@ -1,9 +1,13 @@
-import {getItemsPending, getItemsSuccess, getItemsError} from '@/actions/items'
 import axios from 'axios'
+
+import {
+    getItemsPending, getItemsSuccess, getItemsError,
+    getItemPending, getItemSuccess, getItemError
+} from '@/actions/items'
+
 import { apiUrl } from '@/helper'
 
 export function callGetItems() {
-
 
     return dispatch => {
         dispatch(getItemsPending());
@@ -16,21 +20,21 @@ export function callGetItems() {
                     throw(response.error)
                 }
 
-                dispatch(getItemsSuccess());
+                dispatch(getItemsSuccess(response.data));
 
                 return response.data;
             })
             .catch(error => {
-                dispatch(getItemsError())
+                dispatch(getItemsError(error))
             })
     }
 }
 
 export function callGetItem(id) {
     return dispatch => {
-        dispatch(getItemsPending());
+        dispatch(getItemPending());
 
-        axios.get('https://exampleapi.com/products')
+        axios.get(apiUrl(`/items/${id}`))
             .then(response => response.json())
             .then(response => {
 
@@ -38,12 +42,12 @@ export function callGetItem(id) {
                     throw(response.error)
                 }
 
-                dispatch(getItemsSuccess());
+                dispatch(getItemSuccess());
 
                 return response.data;
             })
             .catch(error => {
-                dispatch(getItemsError())
+                dispatch(getItemError())
             })
     }
 }

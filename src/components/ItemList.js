@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Link from 'next/link'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { callGetItems } from '@/services/items'
-import {getItems, getItemsPending, getItemsError} from '@/reducers/items'
+import { getItems, getItemsPending, getItemsError } from '@/reducers/items'
 
 import { 
   Container, Row, Col,
@@ -63,7 +64,7 @@ class ItemList extends Component {
                       <h3>Title Item</h3>
                       <div className="mb-2">$89</div>
                       <Link href={`/items/`+item.id}>
-                        <a className="btn btn-primary">Bid Now</a>
+                        <a className="btn btn-primary rounded-pill px-3">Bid Now</a>
                       </Link>
                     </Col>
                   </Row>

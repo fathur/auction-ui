@@ -7,7 +7,7 @@ class Hero extends Component {
                 <div className="container">
                     <h1 className="mb-5"><span className="display-3 text-danger">#1</span> Auction Platform In The Universe</h1>
 
-                    <input className="form-control form-control-lg" 
+                    <input className="form-control form-control-lg rounded-pill px-4" 
                         autoFocus
                         type="text" 
                         placeholder="Search your wanted item here" />
