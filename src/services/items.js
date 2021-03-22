@@ -1,53 +1,55 @@
 import axios from 'axios'
+import _ from 'lodash'
 
 import {
     getItemsPending, getItemsSuccess, getItemsError,
     getItemPending, getItemSuccess, getItemError
 } from '@/actions/items'
 
-import { apiUrl } from '@/helper'
+import { apiUrl, jwtToken } from '@/helper'
 
-export function callGetItems() {
+export function callGetItems(params = {}) {
 
     return dispatch => {
         dispatch(getItemsPending());
 
-        axios.get(apiUrl('/items'))
-            .then(response => response.json())
+        // let page
+
+        // if (_.has(params, 'page')) {
+        //     page = params.page
+        // }
+
+        axios.get(apiUrl('/items'), {
+            params: {
+                page: params.page || 1,
+                q: params.q || ''
+            }
+        })
             .then(response => {
-
-                if(response.error) {
-                    throw(response.error)
-                }
-
-                dispatch(getItemsSuccess(response.data));
-
-                return response.data;
+                dispatch(getItemsSuccess(response.data.data, response.data.meta.pagination));
             })
             .catch(error => {
-                dispatch(getItemsError(error))
+                dispatch(getItemsError(error.response.data.data))
             })
     }
 }
 
 export function callGetItem(id) {
+    
     return dispatch => {
+
         dispatch(getItemPending());
 
-        axios.get(apiUrl(`/items/${id}`))
-            .then(response => response.json())
+        axios.get(apiUrl(`/items/${id}`), {
+            headers: {
+                'Authorization': `Bearer ${jwtToken()}`
+            }
+        })
             .then(response => {
-
-                if(response.error) {
-                    throw(response.error)
-                }
-
-                dispatch(getItemSuccess());
-
-                return response.data;
+                dispatch(getItemSuccess(response.data.data));
             })
             .catch(error => {
-                dispatch(getItemError())
+                dispatch(getItemError(error.response.data.data))
             })
     }
 }

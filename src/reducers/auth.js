@@ -33,7 +33,7 @@ export function authReducer(state = initialState, action) {
 
             setLoginCookie(action.data.token)
 
-            Router.push('/')
+            Router.push('/list')
 
             return {
                 pending: false,

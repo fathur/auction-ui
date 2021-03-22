@@ -12,10 +12,11 @@ export function getItemsPending() {
     }
 }
 
-export function getItemsSuccess(items) {
+export function getItemsSuccess(data, pagination) {
     return {
         type: GET_ITEMS_SUCCESS,
-        items: items
+        data,
+        pagination
     }
 }
 
@@ -28,20 +29,20 @@ export function getItemsError(error) {
 
 export function getItemPending() {
     return {
-        type: GET_ITEMS_PENDING
+        type: GET_ITEM_PENDING
     }
 }
 
-export function getItemSuccess(item) {
+export function getItemSuccess(data) {
     return {
-        type: GET_ITEMS_SUCCESS,
-        items: item
+        type: GET_ITEM_SUCCESS,
+        data
     }
 }
 
 export function getItemError(error) {
     return {
-        type: GET_ITEMS_ERROR,
+        type: GET_ITEM_ERROR,
         error: error
     }
 }

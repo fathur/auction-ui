@@ -32,7 +32,7 @@ class Login extends Component {
 
   componentDidMount() {
     if (isLoggedIn()) {
-      Router.push('/')
+      Router.push('/list')
     }
   }
 

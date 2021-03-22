@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Router from 'next/router'
+import React, { Component } from 'react';
 
 import {
   Container, Row,
@@ -8,18 +10,15 @@ import Layout from '@/views/Layout';
 import Hero from '@/components/Hero'
 import ItemList from '@/components/ItemList'
 
-export default function Home() {
-  return (
-    <Layout>
-      <Container fluid>
-        <Row>
-          <Hero />
-        </Row>
-      </Container>
+class Home extends Component {
+  componentWillMount() {
+      Router.push('/list')
+  }
 
-      <Container>
-        <ItemList/>
-      </Container>
-    </Layout>
-  )
+  render() {
+      return (<></>)
+  }
 }
+
+
+export default Home;

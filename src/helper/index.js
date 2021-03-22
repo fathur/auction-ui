@@ -45,3 +45,7 @@ export const clearLoginCookie = (token) => {
     const cookies = new Cookies()
     cookies.remove('token', token)
 }
+
+export const timestampToDate = (timestamp) => {
+  return new Date(timestamp * 1000)
+}

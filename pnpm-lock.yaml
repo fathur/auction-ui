@@ -5,6 +5,7 @@ dependencies:
   nextjs-breadcrumbs: registry.npmjs.org/nextjs-breadcrumbs/0.9.9_next@10.0.9+react@17.0.1
   react: registry.npmjs.org/react/17.0.1
   react-bootstrap: registry.npmjs.org/react-bootstrap/1.5.2_react-dom@17.0.1+react@17.0.1
+  react-countdown: registry.npmjs.org/react-countdown/2.3.1_react-dom@17.0.1+react@17.0.1
   react-dom: registry.npmjs.org/react-dom/17.0.1_react@17.0.1
   react-redux: registry.npmjs.org/react-redux/7.2.2_380dc38591053d98779d1f25fc7202b9
   redux: registry.npmjs.org/redux/4.0.5
@@ -2120,6 +2121,22 @@ packages:
       registry: https://npm-proxy.fury.io/kellerwilliams/
       tarball: https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-1.5.2.tgz
     version: 1.5.2
+  registry.npmjs.org/react-countdown/2.3.1_react-dom@17.0.1+react@17.0.1:
+    dependencies:
+      prop-types: registry.npmjs.org/prop-types/15.7.2
+      react: registry.npmjs.org/react/17.0.1
+      react-dom: registry.npmjs.org/react-dom/17.0.1_react@17.0.1
+    dev: false
+    id: registry.npmjs.org/react-countdown/2.3.1
+    name: react-countdown
+    peerDependencies:
+      react: '>= 15'
+      react-dom: '>= 15'
+    resolution:
+      integrity: sha512-h66prF+Wwj3Ru4tDeqvXsW8iqaCyC54pjwTAlUUmUQ11EUqIO34xV4pO4q8MGT6917ep47ntKmBW99ZVN1ozdQ==
+      registry: https://npm-proxy.fury.io/kellerwilliams/
+      tarball: https://registry.npmjs.org/react-countdown/-/react-countdown-2.3.1.tgz
+    version: 2.3.1
   registry.npmjs.org/react-dom/17.0.1_react@17.0.1:
     dependencies:
       loose-envify: registry.npmjs.org/loose-envify/1.4.0
@@ -2931,6 +2948,7 @@ specifiers:
   nextjs-breadcrumbs: ^0.9.9
   react: 17.0.1
   react-bootstrap: ^1.5.2
+  react-countdown: ^2.3.1
   react-dom: 17.0.1
   react-redux: ^7.2.2
   redux: ^4.0.5

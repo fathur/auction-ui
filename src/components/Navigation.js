@@ -54,13 +54,12 @@ class Navigation extends Component {
                             <NavDropdown title={this.props.data.full_name} id="basic-nav-dropdown" alignRight>
                                 
                                 <Link href="/profile/preferences">
-                                    <a className="dropdown-item">Preferences</a>
+                                     <a className="dropdown-item">Preferences</a>
                                 </Link>
 
                                 <NavDropdown.Divider />
 
                                 <a href="#" className="dropdown-item" onClick={this.handleLogout}>Logout</a>
-                                {/* <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item> */}
                             </NavDropdown>
                         }
                     </Nav>
