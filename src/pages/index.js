@@ -11,7 +11,7 @@ import Hero from '@/components/Hero'
 import ItemList from '@/components/ItemList'
 
 class Home extends Component {
-  componentWillMount() {
+  componentDidMount() {
       Router.push('/list')
   }
 

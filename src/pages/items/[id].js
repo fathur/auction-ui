@@ -44,14 +44,14 @@ const RendererCountdown = ({ days, hours, minutes, seconds, completed }) => {
     <div>
       <span className={(days > 0) ? '' : 'd-none'}>
       {days} <small>days, </small>
-      </span> 
+      </span>
 
       <span className={(hours > 0) ? '' : 'd-none'}>
-      {hours} <small>hours, </small> 
+      {hours} <small>hours, </small>
       </span>
-      
+
       <span className={(minutes > 0) ? '' : 'd-none'}>
-      {minutes} <small>minutes, </small> 
+      {minutes} <small>minutes, </small>
       </span>
 
       {seconds} <small>seconds</small>
@@ -63,7 +63,7 @@ const RendererCountdown = ({ days, hours, minutes, seconds, completed }) => {
 const ItemView = (props) => {
 
   const router = useRouter()
-  
+
   useEffect(async () => {
     const { id } = router.query
 
@@ -75,7 +75,7 @@ const ItemView = (props) => {
 
     // setInterval(() => {
     //   // const { callGetItem } = props
-      
+
     //   // callGetItem(id)
     // }, 1000);
 
@@ -92,6 +92,7 @@ const ItemView = (props) => {
     const { postBid, callGetItem } = props
     await postBid(id, { nominal, auto })
     await callGetItem(id)
+    setNominal('')
 
     // console.log(auto);
   }
@@ -114,23 +115,23 @@ const ItemView = (props) => {
                 <label htmlFor="">Time remaining</label>
 
                 <div className="h4 mb-0">
-                  {ableToBid(props) ? <Countdown date={props.itemData.expiry_at * 1000}  renderer={RendererCountdown}></Countdown> : <CompletedCountdown />}
+                  {ableToBid(props) ? <Countdown date={props.itemData.expiry_at * 1000}  renderer={RendererCountdown} /> : <CompletedCountdown />}
                 </div>
               </div>
 
               <div className="form-group">
                 <label htmlFor="">The highest bid</label>
-                <div className="h5 mb-0">${props.itemData.highest_price} <span className="small muted">{props.itemData.highest_bidder}</span></div>
+                <div className="h5 mb-0">${props.itemData.highest_price} <span className="small muted">by @{props.itemData.highest_bidder}</span></div>
               </div>
 
-              {ableToBid(props) ? 
+              {ableToBid(props) ?
               <Card className="shadow-sm">
                 <Card.Body>
 
                   {props.bidError ?
                     <Alert variant='danger'>
                       <span className="small">
-                        {props.bidError.message} 
+                        {props.bidError.message}
                         {props.bidError.errors.username ? ' ' + props.bidError.errors.username : ''}
 
                       </span>
@@ -144,16 +145,16 @@ const ItemView = (props) => {
                       </div>
 
                       <input type="number" name="nominal" min="0"
-                        className="form-control" 
-                        autoFocus 
+                        className="form-control"
+                        autoFocus
                         value={nominal}
-                        placeholder="Your bid" 
-                        aria-label="Your bid" 
+                        placeholder="Your bid"
+                        aria-label="Your bid"
                         aria-describedby="button-bid"
                         onChange={e => setNominal(e.target.value)} />
 
                       <div className="input-group-append">
-                        
+
                       </div>
                     </div>
 
@@ -164,7 +165,7 @@ const ItemView = (props) => {
                       }</Form.Text>
 
                     <div className="form-check mt-2">
-                      <input className="form-check-input" name="auto" type="checkbox" 
+                      <input className="form-check-input" name="auto" type="checkbox"
                         value="on"
                         defaultChecked={auto}
                         onChange={e => setAuto(!auto)}
@@ -175,7 +176,7 @@ const ItemView = (props) => {
                     </div>
 
                     <Button variant="primary" block className="mt-2"
-                        type="submit" 
+                        type="submit"
                         id="button-bid">Submit Bid</Button>
 
                   </Form>
