@@ -23,14 +23,13 @@ const BidConfig = (props) => {
     const [budget, setBudget] = useState()
 
     useEffect(() => {
-
-        // let mounted = true
-    //
         const {callGetPreferences} = props
-    //
-        callGetPreferences()
 
-          
+        callGetPreferences()
+    }, []);
+
+    useEffect(() => {
+   
         const preferenceBudget = _.find(props.preferencesData, (p) => p.key === 'budget')
     
         // await console.log(props);
@@ -39,18 +38,13 @@ const BidConfig = (props) => {
             setBudget(preferenceBudget.value)
         }
 
-        // return () => mounted = false;
-    }, [])
-
-    // const [budget, setBudget] = useState(0)
+    }, [props.preferencesData])
 
     const [toast, setToast] = useState(false)
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        console.log('click');
 
         const {callPutPreference} = props
 
