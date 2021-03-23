@@ -26,6 +26,8 @@ export function callGetPreferences() {
             .catch(error => {
                 dispatch(getPreferencesError(error.response.data.data))
             })
+
+            
     }
 }
 
